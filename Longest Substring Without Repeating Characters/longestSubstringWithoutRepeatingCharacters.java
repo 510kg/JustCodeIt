@@ -1,12 +1,15 @@
+import java.util.*;
+
 class Solution {
-    public int lengthOfLongestSubstring(String s) {
+    static public int lengthOfLongestSubstring(String s) {
         if (s == null || s.length() == 0) {
             return 0;
         }
-        Set<Character> set = new HashSet<Character>();
         int max = 0;
-        int slow = 0;
         int fast = 0;
+        int slow = 0;
+        Set<Character> set = new HashSet<>();
+
         while (fast < s.length()) {
             if (set.contains(s.charAt(fast))) {
                 if (max < fast - slow) {
@@ -22,6 +25,21 @@ class Solution {
             }
             fast++;
         }
+
         return Math.max(max, fast - slow);
+    }
+
+    public static void main(String[] args) {
+        String s1 = "abcbdebbacdwot";
+        String s2 = "aaaaaa";
+        String s3 = "abcabcbb";
+
+        int result1 = lengthOfLongestSubstring(s1);
+        int result2 = lengthOfLongestSubstring(s2);
+        int result3 = lengthOfLongestSubstring(s3);
+
+        System.out.println(result1);
+        System.out.println(result2);
+        System.out.println(result3);
     }
 }
