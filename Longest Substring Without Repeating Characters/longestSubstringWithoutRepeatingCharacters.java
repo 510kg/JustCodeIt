@@ -1,7 +1,9 @@
 import java.util.*;
 
 class Solution {
-    static public int lengthOfLongestSubstring(String s) {
+    public Solution() {}
+
+    public int lengthOfLongestSubstring(String s) {
         if (s == null || s.length() == 0) {
             return 0;
         }
@@ -16,7 +18,7 @@ class Solution {
                     max = fast - slow;
                 }
                 while (s.charAt(slow) != s.charAt(fast)) {//eg. abcb
-                    set.remove(s.charAt(slow));
+                set.remove(s.charAt(slow));
                     slow++;
                 }
                 slow++;
@@ -30,13 +32,14 @@ class Solution {
     }
 
     public static void main(String[] args) {
+        Solution solution = new Solution();
         String s1 = "abcbdebbacdwot";
         String s2 = "aaaaaa";
         String s3 = "abcabcbb";
 
-        int result1 = lengthOfLongestSubstring(s1);
-        int result2 = lengthOfLongestSubstring(s2);
-        int result3 = lengthOfLongestSubstring(s3);
+        int result1 = solution.lengthOfLongestSubstring(s1);
+        int result2 = solution.lengthOfLongestSubstring(s2);
+        int result3 = solution.lengthOfLongestSubstring(s3);
 
         System.out.println(result1);
         System.out.println(result2);

@@ -8,6 +8,8 @@ class ListNode {
 }
 
 class Solution {
+    public Solution() {}
+
     static public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         if (l1 == null && l2 == null) {
             return null;
@@ -16,7 +18,7 @@ class Solution {
         ListNode temp = head;
         int sum = 0;
         while (l1 != null || l2 != null) {
-            sum /= 10;//care about the carry directly when start calculating everytime
+        sum /= 10;//care about the carry directly when start calculating everytime
             if (l1 != null) {
                 sum += l1.val;
                 l1 = l1.next;
@@ -35,6 +37,8 @@ class Solution {
     }
 
     public static void main(String[] args) {
+        Solution solution = new Solution();
+
         ListNode node1 = new ListNode(3);
         ListNode node2 = new ListNode(0);
         ListNode node3 = new ListNode(8);
@@ -55,7 +59,7 @@ class Solution {
         node7.next = node8;
         node8.next = node9;
 
-        ListNode result = addTwoNumbers(node1, node6);
+        ListNode result = solution.addTwoNumbers(node1, node6);
         while (result != null) {
             System.out.println(result.val);
             result = result.next;

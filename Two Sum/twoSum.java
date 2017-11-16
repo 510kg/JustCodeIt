@@ -1,7 +1,9 @@
 import java.util.*;
 //HashMap
 class Solution {
-    public static int[] twoSum(int[] nums, int target) {
+    public Solution() {}
+
+    public int[] twoSum(int[] nums, int target) {
         int[] result = new int[2];
         if (nums == null || nums.length < 2) {
             return null;
@@ -21,12 +23,13 @@ class Solution {
     }
 
     public static void main(String[] args) {
+        Solution solution = new Solution();
         int[] nums = {0, 2, 3, 4, 7, 8};
         int target1 = 6;
         int target2 = 8;
 
-        int[] result1 = twoSum(nums, target1);
-        int[] result2 = twoSum(nums, target2);
+        int[] result1 = solution.twoSum(nums, target1);
+        int[] result2 = solution.twoSum(nums, target2);
 
         for (int result : result1) {
             System.out.println(result);
