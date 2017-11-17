@@ -45,13 +45,13 @@ class Solution {
 	}
 
 	public static void main(String[] args) {
-		Solution solution = new Solution();
+    	Solution solution = new Solution();
 
-		int[] nums1 = {-1, 0, 1, 2, -1, -4};
+        int[] nums1 = {-1, 0, 1, 2, -1, -4};
         int[] nums2 = {0, 0, 0};
 
 		List<List<Integer>> results1 = solution.threeSum(nums1);
-        List<List<Integer>> results2 = solution.threeSum(nums2);
+		List<List<Integer>> results2 = solution.threeSum(nums2);
 
 		for (List<Integer> list : results1) {
 			for (int num : list) {
