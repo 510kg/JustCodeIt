@@ -38,29 +38,27 @@ class Solution {
         return dummy.next;
 	}
 
+    public ListNode converter(int[] vals) {
+        ListNode origin = new ListNode(vals[0]);
+        ListNode temp = origin;
+        for (int i = 1; i < vals.length; i++) {
+            temp.next = new ListNode(vals[i]);
+            temp = temp.next;
+        }
+        return origin;
+
+    }
+
 	public static void main(String[] args) {
         Solution solution = new Solution();
+        
+        int[] vals1 = new int[] {0, 3, 7, 8, 11, 15};
+        int[] vals2 = new int[] {1, 1, 12};
 
-        ListNode n1 = new ListNode(0);
-        ListNode n2 = new ListNode(3);
-        ListNode n3 = new ListNode(7);
-        ListNode n4 = new ListNode(8);
-        ListNode n5 = new ListNode(11);
-        ListNode n6 = new ListNode(15);
-        ListNode n7 = new ListNode(1);
-        ListNode n8 = new ListNode(1);
-        ListNode n9 = new ListNode(12);
+        ListNode n1 = solution.converter(vals1);
+        ListNode n2 = solution.converter(vals2);
 
-        n1.next = n2;
-        n2.next = n3;
-        n3.next = n4;
-        n4.next = n5;
-        n5.next = n6;
-
-        n7.next = n8;
-        n8.next = n9;
-
-        ListNode r1 = solution.mergeTwoLists(n1, n7);
+        ListNode r1 = solution.mergeTwoLists(n1, n2);
 
         while (r1 != null) {
         	System.out.println(r1.val);
