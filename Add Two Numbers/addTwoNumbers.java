@@ -10,7 +10,7 @@ class ListNode {
 class Solution {
     public Solution() {}
 
-    static public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         if (l1 == null && l2 == null) {
             return null;
         }
@@ -36,30 +36,26 @@ class Solution {
         return head.next;
     }
 
+    public ListNode converter(int[] vals) {
+        ListNode origin = new ListNode(vals[0]);
+        ListNode temp = origin;
+        for (int i = 1; i < vals.length; i++) {
+            temp.next = new ListNode(vals[i]);
+            temp = temp.next;
+        }
+        return origin;
+    }
+
     public static void main(String[] args) {
         Solution solution = new Solution();
 
-        ListNode node1 = new ListNode(3);
-        ListNode node2 = new ListNode(0);
-        ListNode node3 = new ListNode(8);
-        ListNode node4 = new ListNode(9);
-        ListNode node5 = new ListNode(1);
+        int[] vals1 = new int[] {3, 0, 8, 9, 1};
+        int[] vals2 = new int[] {7, 2, 3, 3};
 
-        ListNode node6 = new ListNode(7);
-        ListNode node7 = new ListNode(2);
-        ListNode node8 = new ListNode(3);
-        ListNode node9 = new ListNode(3);
+        ListNode n1 = solution.converter(vals1);
+        ListNode n2 = solution.converter(vals2);
 
-        node1.next = node2;
-        node2.next = node3;
-        node3.next = node4;
-        node4.next = node5;
-
-        node6.next = node7;
-        node7.next = node8;
-        node8.next = node9;
-
-        ListNode result = solution.addTwoNumbers(node1, node6);
+        ListNode result = solution.addTwoNumbers(n1, n2);
         while (result != null) {
             System.out.println(result.val);
             result = result.next;
