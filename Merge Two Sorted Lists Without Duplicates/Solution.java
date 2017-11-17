@@ -13,6 +13,7 @@ public class Solution {
 		if (l1 == null && l2 == null) {
 			return null;
 		}
+		
 		ListNode dummy = new ListNode(0);
 		ListNode newHead = dummy;
 		while (l1 != null && l2 != null) {
@@ -30,6 +31,7 @@ public class Solution {
 				l2 = l2.next;
 			}
 		}
+		
 		while (l1 != null) {
 			if (newHead == dummy || newHead.val != l1.val) {
 				newHead.next = l1;
