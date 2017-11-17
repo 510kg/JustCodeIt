@@ -46,7 +46,6 @@ class Solution {
                 curLen += 1;
             }
         }
-
         return result;
     }
 
