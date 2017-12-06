@@ -13,7 +13,7 @@ class Solution {
 
 	public boolean palindromeList(ListNode head) {
 		if (head == null) {
-			return false;
+			return true;
 		}
 		/*
 		if (head.next == null) {
