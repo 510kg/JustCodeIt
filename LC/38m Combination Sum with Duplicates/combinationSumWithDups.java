@@ -8,6 +8,7 @@ class Solution {
 		if (candidates == null || candidates.length == 0) {
 			return results;
 		}
+		Arrays.sort(candidates);
 		List<Integer> combination = new ArrayList<Integer>();
 		dfsHelper(results, candidates, target, combination, 0);
 		return results;
@@ -25,12 +26,24 @@ class Solution {
 				continue;
 			}
 			combination.add(candidates[i]);
-			dfsHelper(results, candidates, target - candidates[i], combination, start + 1);
+			dfsHelper(results, candidates, target - candidates[i], combination, i);
 			combination.remove(combination.size() - 1);
 		}
 	}
 
-	public static void main(String[] args) {
-		Solution solution = new Solution();
-	}
+    public static void main(String[] args) {
+        Solution solution = new Solution();
+
+        int[] candidates = new int[] {2, 2, 2, 3, 6, 7, 8, 9, 10};
+        int target = 7;
+
+        List<List<Integer>> results = solution.combinationSumWithDups(candidates, target);
+
+        for (int i = 0; i < results.size(); i++) {
+            for (int j = 0; j < results.get(i).size(); j++) {
+                System.out.print(results.get(i).get(j) + " ");
+            }
+            System.out.println(";");
+        }
+    }
 }
