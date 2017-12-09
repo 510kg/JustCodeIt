@@ -34,8 +34,8 @@ class Solution {
     public static void main(String[] args) {
         Solution solution = new Solution();
 
-        int[] candidates = new int[] {2, 2, 2, 3, 6, 7, 8, 9, 10};
-        int target = 7;
+        int[] candidates = new int[] {10, 1, 2, 7, 6, 1, 5};
+        int target = 8;
 
         List<List<Integer>> results = solution.combinationSumWithDups(candidates, target);
 
